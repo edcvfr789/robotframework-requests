@@ -8,13 +8,13 @@ Library           OperatingSystem
 *** Test Cases ***
 Get Request
     [Tags]    get
-    Create Session    google    http://www.google.com
-    Create Session    github    https://api.github.com
+    Create Session    google    http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=Ruckus+Wireless
+    #Create Session    github    https://api.github.com
     ${resp}=    Get Request    google    /
     Should Be Equal As Strings    ${resp.status_code}    200
-    ${resp}=    Get Request    github    /users/bulkan
-    Should Be Equal As Strings    ${resp.status_code}    200
-    Dictionary Should Contain Value    ${resp.json()}    Bulkan Evcimen
+    #${resp}=    Get Request    github    /users/bulkan
+    #Should Be Equal As Strings    ${resp.status_code}    200
+    #Dictionary Should Contain Value    ${resp.json()}    Bulkan Evcimen
 
 Get Request with Url Parameters
     [Tags]    get
