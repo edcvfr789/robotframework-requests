@@ -24,13 +24,9 @@ Here is a sample test case.
 | Library                   | RequestsLibrary                  |                     |                                |
 | Test Cases                |                                  |                     |                                |
 | Get Requests              |                                  |                     |                                |
-|                           | Create Session                   | github              | http://api.github.com          |
-|                           | Create Session                   | google              | http://www.google.com          |
+|                           | Create Session                   | google              | http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=Ruckus+Wireless         |
 |                           | ${resp}=                         | Get Request         | google                         | /                    |
 |                           | Should Be Equal As Strings       | ${resp.status_code} | 200                            |
-|                           | ${resp}=                         | Get Request         | github                         | /users/bulkan        |
-|                           | Should Be Equal As Strings       | ${resp.status_code} | 200                            |
-|                           | Dictionary Should Contain Value  | ${resp.json()}      | Bulkan Savun Evcimen           |
 
 
 RequestsLibrary, tries to follow the same API as requests. In the above example we load in the `RequestsLibrary` using the `Library` keyword.
@@ -74,16 +70,9 @@ Documentation
 
 For individual keyword documentation see the following;
 
-[http://bulkan.github.io/robotframework-requests/](http://bulkan.github.io/robotframework-requests/)
-
+ 
 You can update the documentation once checked out by going to the top directory of this repo and issuing the following command:
 python -m robot.libdoc src/RequestsLibrary/RequestsKeywords.py doc/RequestsLibrary.html
 
 
-Help
-====
-
-Send your questions to the [Robot Framework Users Group](https://groups.google.com/forum/#!forum/robotframework-users)
-
-
-[Follow me on twitter - @bulkanevcimen](https://twitter.com/bulkanevcimen)
+ 
